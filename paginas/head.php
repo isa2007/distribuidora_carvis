@@ -79,6 +79,30 @@
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
+             <!-- Linea de separacion  -->
+             <hr class="sidebar-divider my-0">
+            <div class="sidebar-heading">
+                Empleado
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Empleados</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Datos del Empleado:</h6>
+                        <a class="collapse-item" href="../Cliente/index.php">Agregar Empleado</a>
+
+                    </div>
+                </div>
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
 
         </ul>
         <!-- Final del Menu Izquierdo -->
