@@ -1,4 +1,4 @@
-<?php include 'codeCliente.php'; ?>
+<?php include 'codeEmpleados.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -19,7 +19,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Cliente</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Empleado</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -28,19 +28,9 @@
 
                             <div class="form-row">
 
-                                
-
-                                <div class="form-group col-md-12">
-                                    <label for="Doc_cli ">Documento</label>
-                                    <input type="text" class="form-control" require name="Doc_cli " id="Doc_cli " placeholder="" value="<?php echo $Doc_cli  ?>">
-                                    <br>
-                                </div>  
-
-                                <div class="form-group col-md-12">
-                                    <label for="txtNombre">Tipo de documento</label>
-                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
-                                    <br>
-                                </div>  
+                                <!-- <label for="txtId">Id</label> -->
+                                <input type="hidden" require name="txtId" id="txtId" placeholder="" value="<?php echo $txtId ?>">
+                                <!-- <br> -->
 
                                 <div class="form-group col-md-12">
                                     <label for="txtNombre">Nombre(s)</label>
@@ -62,16 +52,10 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtCorreo">Direccion</label>
+                                    <label for="txtCorreo">Correo</label>
                                     <input type="email" class="form-control" require name="txtCorreo" id="txtCorreo" placeholder="" value="<?php echo $txtCorreo ?>">
                                     <br>
                                 </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="txtNombre">Telefono</label>
-                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
-                                    <br>
-                                </div>  
 
                                 <div class="form-group col-md-12">
                                     <label for="foto">foto</label>
@@ -101,7 +85,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar Cliente
+                Agregar Empleado
             </button>
 
 
@@ -120,14 +104,12 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        
-                        <th scope="col">Documento</th>
-                        <th scope="col">Tipo Documento</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Identificacion</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Primer Apellido</th>
                         <th scope="col">Segundo Apellido</th>
-                        <th scope="col">Direccion</th>
-                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -146,7 +128,10 @@
 
                             <tr>
 
-                               
+                                <td>
+                                    <img class="img-thumbnail" width="100px" src="../Imagenes/Empleados/<?php echo $empleado['foto']; ?>" />
+
+                                </td>
 
                                 <td> <?php echo $empleado['id']        ?> </td>
                                 <td> <?php echo $empleado['nombre']    ?> </td>

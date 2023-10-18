@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Proyecto Final</title>
+    <title>Distri_carvis_base de datos</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@
                     <!-- logo de ;)  https://fontawesome.com/search aqui se descargan -->
                     <i class="fas fa-solid fa-code"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Nombre JJJ </div>
+                <div class="sidebar-brand-text mx-3">Distri_carvis </div>
             </a>
 
             <!-- Linea de separacion  -->
@@ -63,42 +63,67 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="../Empleados/index.php"  aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Empleados</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos del Empleado:</h6>
-                        <a class="collapse-item" href="../Empleados/index.php">Agregar Empleado</a>
-
-                    </div>
-                </div>
+               
             </li>
 
             <!-- Linea de separacion  -->
-            <hr class="sidebar-divider my-0">
+           
 
              <!-- Linea de separacion  -->
              <hr class="sidebar-divider my-0">
             <div class="sidebar-heading">
-                Empleado
+                Clientes
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="../Cliente/index.php"  aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Empleados</span>
+                    <span>Clientes</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos del Empleado:</h6>
-                        <a class="collapse-item" href="../Cliente/index.php">Agregar Empleado</a>
-
-                    </div>
-                </div>
+               
             </li>
+            <!-- Linea de separacion  -->
+           
+
+             <!-- Linea de separacion  -->
+             <hr class="sidebar-divider my-0">
+            <div class="sidebar-heading">
+                Articulos
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../Articulo/index.php"  aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Articulos</span>
+                </a>
+               
+            </li>
+
+            <!-- Linea de separacion  -->
+           
+
+             <!-- Linea de separacion  -->
+             <hr class="sidebar-divider my-0">
+            <div class="sidebar-heading">
+                Facturas
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../Factura/index.php"  aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Facturas</span>
+                </a>
+                
+            </li>
+
+
 
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
