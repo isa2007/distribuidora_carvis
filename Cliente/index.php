@@ -37,48 +37,37 @@
                                 </div>  
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtNombre">Tipo de documento</label>
-                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
+                                    <label for="Tipo_doc_cli">Tipo de documento</label>
+                                    <input type="text" class="form-control" require name="Tipo_doc_cli" id="Tipo_doc_cli" placeholder="" value="<?php echo $Tipo_doc_cli ?>">
                                     <br>
                                 </div>  
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtNombre">Nombre(s)</label>
-                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
+                                    <label for="Nom_cli">Nombre(s)</label>
+                                    <input type="text" class="form-control" require name="Nom_cli" id="Nom_cli" placeholder="" value="<?php echo $Nom_cli ?>">
                                     <br>
                                 </div>                               
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtApellidoP">Primer Apellido </label>
-                                    <input type="text" class="form-control" require name="txtApellidoP" id="txtApellidoP" placeholder="" value="<?php echo $txtApellidoP ?>">
+                                    <label for="Ape_cli">Primer Apellido </label>
+                                    <input type="text" class="form-control" require name="Ape_cli" id="Ape_cli" placeholder="" value="<?php echo $Ape_cli ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtApellidoM">Segundo Apellido </label>
-                                    <input type="text" class="form-control" require name="txtApellidoM" id="txtApellidoM" placeholder="" value="<?php echo $txtApellidoM ?>">
-
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="txtCorreo">Direccion</label>
-                                    <input type="email" class="form-control" require name="txtCorreo" id="txtCorreo" placeholder="" value="<?php echo $txtCorreo ?>">
+                                    <label for="Direc_cli">Direccion</label>
+                                    <input type="email" class="form-control" require name="Direc_cli" id="Direc_cli" placeholder="" value="<?php echo $Direc_cli ?>">
                                     <br>
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtNombre">Telefono</label>
-                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
+                                    <label for="Tel_cli">Telefono</label>
+                                    <input type="text" class="form-control" require name="Tel_cli" id="Tel_cli" placeholder="" value="<?php echo $Tel_cli ?>">
                                     <br>
                                 </div>  
 
-                                <div class="form-group col-md-12">
-                                    <label for="foto">foto</label>
-                                    <!-- El atributo accept image .... solo acepta formatos de imagen -->
-                                    <input type="file" class="form-control" require accept="image/*" name="foto" id="foto" placeholder="" value="<?php echo $foto ?>">
-                                    <br>
-                                </div>
+                                
 
 
 
@@ -138,9 +127,9 @@
 
                     <?php
                     /* Prefunto que si la variable listaEmpleados tiene algun contenido */
-                    if ($listaEmpleados->num_rows > 0) {
+                    if ($listaArticulo->num_rows > 0) {
 
-                        foreach ($listaEmpleados as $empleado) {
+                        foreach ($listaArticulo as $Articulo) {
 
                     ?>
 
@@ -148,22 +137,24 @@
 
                                
 
-                                <td> <?php echo $empleado['id']        ?> </td>
-                                <td> <?php echo $empleado['nombre']    ?> </td>
-                                <td> <?php echo $empleado['apellidoP'] ?> </td>
-                                <td> <?php echo $empleado['apellidoM'] ?> </td>
-                                <td> <?php echo $empleado['correo']    ?> </td>
+                                <td> <?php echo $Articulo['Doc_cli ']        ?> </td>
+                                <td> <?php echo $Articulo['Tipo_doc_cli']    ?> </td>
+                                <td> <?php echo $Articulo['Nom_cli'] ?> </td>
+                                <td> <?php echo $Articulo['Ape_cli'] ?> </td>
+                                <td> <?php echo $Articulo['Direc_cli']    ?> </td>
+                                <td> <?php echo $Articulo['Tel_cli']    ?> </td>
+
 
 
 
                                 <form action="" method="post">
 
-                                    <input type="hidden" name="txtId" value="<?php echo $empleado['id'];  ?>">
-                                    <input type="hidden" name="txtNombre" value="<?php echo $empleado['nombre'];  ?>">
-                                    <input type="hidden" name="txtApellidoP" value="<?php echo $empleado['apellidoP'];  ?>">
-                                    <input type="hidden" name="txtApellidoM" value="<?php echo $empleado['apellidoM'];  ?>">
-                                    <input type="hidden" name="txtCorreo" value="<?php echo $empleado['correo'];  ?>">
-                                    <input type="hidden" name="foto" value="<?php echo $empleado['foto'];  ?>">
+                                    <input type="hidden" name="Doc_cli" value="<?php echo $Articulo['Doc_cli'];  ?>">
+                                    <input type="hidden" name="Tipo_doc_cli" value="<?php echo $Articulo['Tipo_doc_cli'];  ?>">
+                                    <input type="hidden" name="Nom_cli" value="<?php echo $Articulo['Nom_cli'];  ?>">
+                                    <input type="hidden" name="Ape_cli" value="<?php echo $Articulo['Ape_cli'];  ?>">
+                                    <input type="hidden" name="Direc_cli" value="<?php echo $Articulo['Direc_cli'];  ?>">
+                                    <input type="hidden" name="Tel_cli" value="<?php echo $Articulo['Tel_cli'];  ?>">
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>

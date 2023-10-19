@@ -51,7 +51,7 @@ switch ($accion) {
             } else {
                 echo "Problemas";
             }
-        } else {
+         else {
             // Manejar el error de carga de la imagen.
             echo "Error al cargar la imagen: " . $_FILES['foto']['error'];
         }
@@ -63,15 +63,15 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarEmpleados = $conn->prepare(" UPDATE empleados SET nombre = '$txtNombre' , 
-        apellidoP = '$txtApellidoP', apellidoM = '$txtApellidoM', correo = '$txtCorreo'
-        WHERE id = '$txtId' ");
+        $editarArticulos = $conn->prepare(" UPDATE articulo SET codigo = '$Cod_arti' , 
+        Nombre articulo = '$Nom_art ', Descripsion= '$Des_arti', Precio = '$Precio'
+        WHERE Fecha = '$Fecha ' ");
 
        
         
 
-        $editarEmpleados->execute();
-        $editarEmpleadosFoto->execute();
+        $editarArticulos->execute();
+       
         $conn->close();
 
         header('location: index.php');
@@ -83,11 +83,11 @@ switch ($accion) {
         $consultaFoto = $conn->prepare(" SELECT foto FROM empleados
         WHERE id = '$txtId' "); */
 
-        $eliminarEmpleado = $conn->prepare(" DELETE FROM empleados
+        $eliminarArticulo = $conn->prepare(" DELETE FROM articulo
         WHERE id = '$txtId' ");
 
         // $consultaFoto->execute();
-        $eliminarEmpleado->execute();
+        $eliminarArticulo->execute();
         $conn->close();
 
         header('location: index.php');
@@ -106,7 +106,7 @@ switch ($accion) {
 
 
 /* Consultamos todos los empleados  */
-$consultaEmpleados = $conn->prepare("SELECT * FROM empleados");
-$consultaEmpleados->execute();
-$listaEmpleados = $consultaEmpleados->get_result();
+$consultaArticulo = $conn->prepare("SELECT * FROM articulo");
+$consultaArticulo->execute();
+$listaArticulo = $consultaArticulo->get_result();
 $conn->close();
