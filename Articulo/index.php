@@ -1,4 +1,4 @@
-<?php include 'codeArticulo.php'; ?>
+<?php include 'codearticulo.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -31,8 +31,8 @@
                                
 
                                 <div class="form-group col-md-12">
-                                    <label for="Cod_arti ">Codigo</label>
-                                    <input type="text" class="form-control" require name="Cod_arti " id="Cod_arti " placeholder="" value="<?php echo $Cod_arti  ?>">
+                                    <label for="Cod_arti">Codigo</label>
+                                    <input type="text" class="form-control" require name="Cod_arti" id="Cod_arti" placeholder="" value="<?php echo $Cod_arti  ?>">
                                     <br>
                                 </div>                               
 
@@ -51,13 +51,13 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="Precio">Precio</label>
-                                    <input type="email" class="form-control" require name="Precio" id="Precio" placeholder="" value="<?php echo $Precio ?>">
+                                    <input type="text" class="form-control" require name="Precio" id="Precio" placeholder="" value="<?php echo $Precio ?>">
                                     <br>
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="Fecha">Fecha</label>
-                                    <input type="text" class="form-control" require name="Fecha" id="Fecha" placeholder="" value="<?php echo $Fecha ?>">
+                                    <input type="date" class="form-control" require name="Fecha" id="Fecha" placeholder="" value="<?php echo $Fecha ?>">
                                     <br>
                                 </div>    
 

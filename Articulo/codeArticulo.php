@@ -32,7 +32,7 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
                 $insercionArticulo = $conn->prepare(
-                    "INSERT INTO articulo(Cod_arti, Nom_art, 
+                    "INSERT INTO articulo (Cod_arti, Nom_art, 
                 Des_arti, Precio, Fecha) 
                 VALUES ('$Cod_arti','$Nom_art','$Des_arti','$Precio','$Fecha')"
                 );
@@ -48,23 +48,20 @@ switch ($accion) {
                 
 
                 header('location: index.php');
-            } else {
-                echo "Problemas";
-            }
-         else {
-            // Manejar el error de carga de la imagen.
-            echo "Error al cargar la imagen: " . $_FILES['foto']['error'];
-        }
+                break;
+           
+        
+        
 
 
 
 
-        break;
+        
 
     case 'btnModificar':
 
         $editarArticulos = $conn->prepare(" UPDATE articulo SET codigo = '$Cod_arti' , 
-        Nombre articulo = '$Nom_art ', Descripsion= '$Des_arti', Precio = '$Precio'
+        Nombre = '$Nom_art ', Descripsion= '$Des_arti', Precio = '$Precio'
         WHERE Fecha = '$Fecha ' ");
 
        
@@ -79,29 +76,31 @@ switch ($accion) {
         break;
 
     case 'btnEliminar':
-        /* 
-        $consultaFoto = $conn->prepare(" SELECT foto FROM empleados
-        WHERE id = '$txtId' "); */
-
+            /* 
+            $consultaFoto = $conn->prepare(" SELECT foto FROM empleados
+            WHERE id = '$txtId' "); */
+    
         $eliminarArticulo = $conn->prepare(" DELETE FROM articulo
-        WHERE id = '$txtId' ");
-
-        // $consultaFoto->execute();
+        WHERE Cod_arti  = '$Cod_arti ' ");
+    
+            // $consultaFoto->execute();
         $eliminarArticulo->execute();
         $conn->close();
-
+    
         header('location: index.php');
-
+    
         break;
-
+    
     case 'btnCancelar':
-        header('location: index.php');
+            header('location: index.php');
         break;
-
+    
     default:
         # code...
         break;
 }
+    
+
 
 
 

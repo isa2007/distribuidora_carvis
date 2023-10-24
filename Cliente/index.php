@@ -32,7 +32,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="Doc_cli ">Documento</label>
-                                    <input type="text" class="form-control" require name="Doc_cli " id="Doc_cli " placeholder="" value="<?php echo $Doc_cli  ?>">
+                                    <input type="text" class="form-control" require name="Doc_cli" id="Doc_cli" placeholder="" value="<?php echo $Doc_cli ?>">
                                     <br>
                                 </div>  
 
@@ -50,14 +50,14 @@
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Ape_cli">Primer Apellido </label>
+                                    <label for="Ape_cli">Apellido </label>
                                     <input type="text" class="form-control" require name="Ape_cli" id="Ape_cli" placeholder="" value="<?php echo $Ape_cli ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="Direc_cli">Direccion</label>
-                                    <input type="email" class="form-control" require name="Direc_cli" id="Direc_cli" placeholder="" value="<?php echo $Direc_cli ?>">
+                                    <input type="text" class="form-control" require name="Direc_cli" id="Direc_cli" placeholder="" value="<?php echo $Direc_cli ?>">
                                     <br>
                                 </div>
 
@@ -113,8 +113,7 @@
                         <th scope="col">Documento</th>
                         <th scope="col">Tipo Documento</th>
                         <th scope="col">Nombres</th>
-                        <th scope="col">Primer Apellido</th>
-                        <th scope="col">Segundo Apellido</th>
+                        <th scope="col">Apellido</th>
                         <th scope="col">Direccion</th>
                         <th scope="col">Telefono</th>
 
@@ -126,10 +125,11 @@
                 <tbody>
 
                     <?php
-                    /* Prefunto que si la variable listaEmpleados tiene algun contenido */
-                    if ($listaArticulo->num_rows > 0) {
 
-                        foreach ($listaArticulo as $Articulo) {
+                    /* Prefunto que si la variable listaEmpleados tiene algun contenido */
+                    if ($listaCliente->num_rows > 0) {
+
+                        foreach ($listaCliente as $Cliente) {
 
                     ?>
 
@@ -137,24 +137,24 @@
 
                                
 
-                                <td> <?php echo $Articulo['Doc_cli ']        ?> </td>
-                                <td> <?php echo $Articulo['Tipo_doc_cli']    ?> </td>
-                                <td> <?php echo $Articulo['Nom_cli'] ?> </td>
-                                <td> <?php echo $Articulo['Ape_cli'] ?> </td>
-                                <td> <?php echo $Articulo['Direc_cli']    ?> </td>
-                                <td> <?php echo $Articulo['Tel_cli']    ?> </td>
+                                <td> <?php echo $Cliente['Doc_cli']        ?> </td>
+                                <td> <?php echo $Cliente['Tipo_doc_cli']    ?> </td>
+                                <td> <?php echo $Cliente['Nom_cli'] ?> </td>
+                                <td> <?php echo $Cliente['Ape_cli'] ?> </td>
+                                <td> <?php echo $Cliente['Direc_cli']    ?> </td>
+                                <td> <?php echo $Cliente['Tel_cli']    ?> </td>
 
 
 
 
                                 <form action="" method="post">
 
-                                    <input type="hidden" name="Doc_cli" value="<?php echo $Articulo['Doc_cli'];  ?>">
-                                    <input type="hidden" name="Tipo_doc_cli" value="<?php echo $Articulo['Tipo_doc_cli'];  ?>">
-                                    <input type="hidden" name="Nom_cli" value="<?php echo $Articulo['Nom_cli'];  ?>">
-                                    <input type="hidden" name="Ape_cli" value="<?php echo $Articulo['Ape_cli'];  ?>">
-                                    <input type="hidden" name="Direc_cli" value="<?php echo $Articulo['Direc_cli'];  ?>">
-                                    <input type="hidden" name="Tel_cli" value="<?php echo $Articulo['Tel_cli'];  ?>">
+                                    <input type="hidden" name="Doc_cli" value="<?php echo $Cliente['Doc_cli'];  ?>">
+                                    <input type="hidden" name="Tipo_doc_cli" value="<?php echo $Cliente['Tipo_doc_cli'];  ?>">
+                                    <input type="hidden" name="Nom_cli" value="<?php echo $Cliente['Nom_cli'];  ?>">
+                                    <input type="hidden" name="Ape_cli" value="<?php echo $Cliente['Ape_cli'];  ?>">
+                                    <input type="hidden" name="Direc_cli" value="<?php echo $Cliente['Direc_cli'];  ?>">
+                                    <input type="hidden" name="Tel_cli" value="<?php echo $Cliente['Tel_cli'];  ?>">
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>
