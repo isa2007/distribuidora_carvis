@@ -19,7 +19,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Cliente</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Proveedor</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -31,14 +31,14 @@
                                 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Doc_cli ">Documento</label>
-                                    <input type="text" class="form-control" require name="Doc_cli" id="Doc_cli" placeholder="" value="<?php echo $Doc_cli ?>">
+                                    <label for="Doc_prov ">Documento</label>
+                                    <input type="text" class="form-control" require name="Doc_prov" id="Doc_prov" placeholder="" value="<?php echo $Doc_prov ?>">
                                     <br>
                                 </div>  
 
                                 <div class="form-group col-md-12">
-                                    <label for="Tipo_doc_cli">Tipo de documento</label>
-                                    <input type="text" class="form-control" require name="Tipo_doc_cli" id="Tipo_doc_cli" placeholder="" value="<?php echo $Tipo_doc_cli ?>">
+                                    <label for="Tipo_doc_prov">Tipo de documento</label>
+                                    <input type="text" class="form-control" require name="Tipo_doc_prov" id="Tipo_doc_prov" placeholder="" value="<?php echo $Tipo_doc_prov ?>">
                                     <br>
                                 </div>  
 
@@ -55,11 +55,7 @@
 
                                 </div>
 
-                                <div class="form-group col-md-12">
-                                    <label for="Direc_cli">Direccion</label>
-                                    <input type="text" class="form-control" require name="Direc_cli" id="Direc_cli" placeholder="" value="<?php echo $Direc_cli ?>">
-                                    <br>
-                                </div>
+                               
 
                                 <div class="form-group col-md-12">
                                     <label for="Tel_cli">Telefono</label>
@@ -89,7 +85,7 @@
             </div>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Agregar Cliente
             </button>
 

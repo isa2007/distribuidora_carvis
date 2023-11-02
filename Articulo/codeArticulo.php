@@ -9,7 +9,6 @@ include("../Conexion/conexion.php");
 //Recibimos las variables enviadas
 $Cod_arti = (isset($_POST['Cod_arti'])) ? $_POST['Cod_arti'] : "";
 $Nom_art = (isset($_POST['Nom_art'])) ? $_POST['Nom_art'] : "";
-$Des_arti = (isset($_POST['Des_arti'])) ? $_POST['Des_arti'] : "";
 $Precio = (isset($_POST['Precio'])) ? $_POST['Precio'] : "";
 $Fecha = (isset($_POST['Fecha'])) ? $_POST['Fecha'] : "";
 
@@ -33,8 +32,8 @@ switch ($accion) {
                 */
                 $insercionArticulo = $conn->prepare(
                     "INSERT INTO articulo (Cod_arti, Nom_art, 
-                Des_arti, Precio, Fecha) 
-                VALUES ('$Cod_arti','$Nom_art','$Des_arti','$Precio','$Fecha')"
+                Precio, Fecha) 
+                VALUES ('$Cod_arti','$Nom_art','$Precio','$Fecha')"
                 );
 
 
@@ -60,9 +59,9 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarArticulos = $conn->prepare(" UPDATE articulo SET codigo = '$Cod_arti' , 
-        Nombre = '$Nom_art ', Descripsion= '$Des_arti', Precio = '$Precio'
-        WHERE Fecha = '$Fecha ' ");
+        $editarArticulos = $conn->prepare(" UPDATE articulo SET Cod_arti = '$Cod_arti', 
+        Nom_art = '$Nom_art ',Precio = '$Precio',Fecha = '$Fecha'
+        WHERE Cod_arti = '$Cod_arti' ");
 
        
         

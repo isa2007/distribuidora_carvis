@@ -43,11 +43,7 @@
 
                                 </div>
 
-                                <div class="form-group col-md-12">
-                                    <label for="Des_arti">Descripsion  </label>
-                                    <input type="text" class="form-control" require name="Des_arti" id="Des_arti" placeholder="" value="<?php echo $Des_arti ?>">
-
-                                </div>
+                                
 
                                 <div class="form-group col-md-12">
                                     <label for="Precio">Precio</label>
@@ -83,7 +79,7 @@
             </div>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Agregar Articulos
             </button>
 
@@ -106,7 +102,6 @@
 
                         <th scope="col">Codigo</th>
                         <th scope="col">Nombre articulo</th>
-                        <th scope="col">Descripsion</th>
                         <th scope="col">Precio </th>
                         <th scope="col">Fecha</th>
 
@@ -131,7 +126,6 @@
 
                                 <td> <?php echo $Articulo['Cod_arti']        ?> </td>
                                 <td> <?php echo $Articulo['Nom_art']    ?> </td>
-                                <td> <?php echo $Articulo['Des_arti'] ?> </td>
                                 <td> <?php echo $Articulo['Precio'] ?> </td>
                                 <td> <?php echo $Articulo['Fecha']    ?> </td>
 
@@ -141,7 +135,6 @@
 
                                     <input type="hidden" name="Cod_arti" value="<?php echo $Articulo['Cod_arti'];  ?>">
                                     <input type="hidden" name="Nom_art" value="<?php echo $Articulo['Nom_art'];  ?>">
-                                    <input type="hidden" name="Des_arti" value="<?php echo $Articulo['Des_arti'];  ?>">
                                     <input type="hidden" name="Precio" value="<?php echo $Articulo['Precio'];  ?>">
                                     <input type="hidden" name="Fecha" value="<?php echo $Articulo['Fecha'];  ?>">
                                     

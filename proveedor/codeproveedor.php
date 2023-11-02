@@ -7,12 +7,12 @@ include("../Conexion/conexion.php");
 
 
 //Recibimos las variables enviadas
-$Doc_cli = (isset($_POST['Doc_cli'])) ? $_POST['Doc_cli'] : "";
-$Tipo_doc_cli = (isset($_POST['Tipo_doc_cli'])) ? $_POST['Tipo_doc_cli'] : "";
-$Nom_cli = (isset($_POST['Nom_cli'])) ? $_POST['Nom_cli'] : "";
-$Ape_cli = (isset($_POST['Ape_cli'])) ? $_POST['Ape_cli'] : "";
-$Direc_cli = (isset($_POST['Direc_cli'])) ? $_POST['Direc_cli'] : "";
-$Tel_cli = (isset($_POST['Tel_cli'])) ? $_POST['Tel_cli'] : "";
+$Doc_prov  = (isset($_POST['Doc_prov '])) ? $_POST['Doc_prov '] : "";
+$Tipo_doc_prov = (isset($_POST['Tipo_doc_prov'])) ? $_POST['Tipo_doc_prov'] : "";
+$Nom_prov = (isset($_POST['Nom_prov'])) ? $_POST['Nom_prov'] : "";
+$Ape_prov = (isset($_POST['Ape_prov'])) ? $_POST['Ape_prov'] : "";
+$Tel_prov = (isset($_POST['Tel_prov'])) ? $_POST['Tel_prov'] : "";
+
 
 
 
@@ -29,15 +29,15 @@ switch ($accion) {
                 La variable conn nos brinda la conexion a la base de datos.
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
-                $insercionCliente = $conn->prepare(
-                    "INSERT INTO cliente (Doc_cli, Tipo_doc_cli, 
-                Nom_cli, Ape_cli, Direc_cli, Tel_cli) 
-                VALUES ('$Doc_cli','$Tipo_doc_cli','$Nom_cli','$Ape_cli','$Direc_cli','$Tel_cli')"
+                $insercionProveedor = $conn->prepare(
+                    "INSERT INTO proveedor (Doc_prov, Tipo_doc_prov, 
+                Nom_prov, Ape_prov, Tel_prov, ) 
+                VALUES ('$Doc_prov','$Tipo_doc_prov','$Nom_prov','$Ape_prov','$Tel_prov')"
                 );
 
 
 
-                $insercionCliente->execute();
+                $insercionProveedor->execute();
                 $conn->close();
                
                echo" <script>
@@ -54,15 +54,15 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarCliente = $conn->prepare(" UPDATE cliente SET Doc_cli = '$Doc_cli', 
-        Tipo_doc_cli = '$Tipo_doc_cli', Nom_cli = '$Nom_cli', Ape_cli = '$Ape_cli',
-        Direc_cli = '$Direc_cli' , Tel_cli = '$Tel_cli' 
-        WHERE Doc_cli = '$Doc_cli' ");
+        $editarProveedor = $conn->prepare(" UPDATE proveedor SET Doc_prov = '$Doc_prov', 
+        Tipo_doc_prov = '$Tipo_doc_prov', Nom_prov = '$Nom_prov', Ape_prov = '$Ape_prov',
+        Tel_prov = '$Tel_prov'
+        WHERE Doc_prov = '$Doc_prov' ");
 
 
 
 
-        $editarCliente->execute();
+        $editarProveedor->execute();
         
         $conn->close();
 
@@ -75,11 +75,11 @@ switch ($accion) {
         $consultaFoto = $conn->prepare(" SELECT foto FROM empleados
         WHERE id = '$txtId' "); */
 
-        $eliminarCliente = $conn->prepare(" DELETE FROM cliente
+        $eliminarProveedor = $conn->prepare(" DELETE FROM proveedor
         WHERE Doc_cli= '$Doc_cli' ");
 
         // $consultaFoto->execute();
-        $eliminarCliente->execute();
+        $eliminarProveedor->execute();
         $conn->close();
 
         header('location: index.php');
@@ -98,7 +98,7 @@ switch ($accion) {
 
 
 /* Consultamos todos los empleados  */
-$consultaCliente = $conn->prepare("SELECT * FROM cliente");
-$consultaCliente->execute();
-$listaCliente = $consultaCliente->get_result();
+$consultaProveedor = $conn->prepare("SELECT * FROM proveedor");
+$consultaProveedor->execute();
+$listaProveedor = $consultaCliente->get_result();
 $conn->close();

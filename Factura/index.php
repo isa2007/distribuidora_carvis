@@ -1,4 +1,4 @@
-<?php include 'codeEmpleados.php'; ?>
+<?php include 'codefactura.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -7,8 +7,8 @@
 
 
 
-        <!-- enctype="multipart/form-data" se utiliza para tratar la fotografia -->
-        <form action="" method="post" enctype="multipart/form-data">
+
+        <form action="" method="post">
 
 
 
@@ -19,7 +19,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Empleado</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Factura</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -28,40 +28,157 @@
 
                             <div class="form-row">
 
-                                <!-- <label for="txtId">Id</label> -->
-                                <input type="hidden" require name="txtId" id="txtId" placeholder="" value="<?php echo $txtId ?>">
-                                <!-- <br> -->
 
-                                <div class="form-group col-md-12">
-                                    <label for="txtNombre">Nombre(s)</label>
-                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
-                                    <br>
-                                </div>                               
+                            <input type="hidden" require name="Id_fac" id="Id_fac" placeholder="" value="<?php echo $Id_fac ?>">
 
 
-                                <div class="form-group col-md-12">
-                                    <label for="txtApellidoP">Primer Apellido </label>
-                                    <input type="text" class="form-control" require name="txtApellidoP" id="txtApellidoP" placeholder="" value="<?php echo $txtApellidoP ?>">
-
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="txtApellidoM">Segundo Apellido </label>
-                                    <input type="text" class="form-control" require name="txtApellidoM" id="txtApellidoM" placeholder="" value="<?php echo $txtApellidoM ?>">
-
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="txtCorreo">Correo</label>
-                                    <input type="email" class="form-control" require name="txtCorreo" id="txtCorreo" placeholder="" value="<?php echo $txtCorreo ?>">
+                            
+                            <div class="form-group col-md-12">
+                                    <label for="Cantidad">Fecha</label>
+                                    <input type="date" class="form-control" require name="Fecha" id="Fecha" value="<?php echo $Fecha ?>">
                                     <br>
                                 </div>
 
+
+                                  
+
+                                 <!-- INICIO SELECTOR CLIENTE -->
+
                                 <div class="form-group col-md-12">
-                                    <label for="foto">foto</label>
-                                    <!-- El atributo accept image .... solo acepta formatos de imagen -->
-                                    <input type="file" class="form-control" require accept="image/*" name="foto" id="foto" placeholder="" value="<?php echo $foto ?>">
+
+                                    <label for="Id_cli">Cliente</label>
+
+
+                                    <select name="Id_cli" id="Id_cli" class="form-control">
+
+                                        <?php
+
+                                        if ($listaCliente->num_rows > 0) {
+                                            foreach ($listaCliente as $cliente) {
+                                                echo " <option value='' hidden > Seleccione el Cliente</option> ";
+                                                echo " <option value='{$cliente['Id_cli']}'> {$cliente['Id_cli']} {$cliente['Nom_cli']} {$cliente['Ape_cli']} </option> ";
+                                            }
+                                        } else {
+
+                                            echo "<h2> No tenemos resultados </h2>";
+                                        }
+                                        ?>
+                                    </select>
+
+
+                                </div>
+
+                                <!-- FIN SELECTOR CLIENTE -->
+
+
+                                <!-- Selector de EMPLEADOS -->
+                                <div class="form-group col-md-12">
+
+                                    <label for="id">Empleado</label>
+
+
+                                    <select name="id" id="id" class="form-control">
+
+                                        <?php
+
+                                        if ($listaEmpleados->num_rows > 0) {
+                                            foreach ($listaEmpleados as $empleado) {
+                                                echo " <option value='' hidden > Seleccione el Empleado</option> ";
+                                                echo " <option value='{$empleado['id']}'> {$empleado['id']} {$empleado['nombre']} {$empleado['apellidoP']} </option> ";
+                                            }
+                                        } else {
+
+                                            echo "<h2> No tenemos resultados </h2>";
+                                        }
+                                        ?>
+                                    </select>
+
+
+                                </div>
+
+                                <!-- FIN SELECTOR EMPLEADO -->
+
+
+
+                    
+
+                                
+
+                                 <!-- INICIO SELECTOR PROVEEDOR-->
+
+                                 <div class="form-group col-md-12">
+
+                                 <label for="Id_prov">Proveedor</label>
+
+
+                                 <select name="Id_prov" id="Id_prov" class="form-control">
+
+                                 <?php
+
+                                 if ($listaProveedor->num_rows > 0) {
+                                  foreach ($listaProveedor as $proveedor) {
+                                    echo " <option value='' hidden > Seleccione el Proveedor</option> ";
+                                    echo " <option value='{$proveedor['Id_prov']}'> {$proveedor['Id_prov']} {$proveedor['Nom_prov']} {$proveedor['Ape_prov']} </option> ";
+                                       }
+                                  } else {
+
+                                    echo "<h2> No tenemos resultados </h2>";
+                                  }
+                                   ?>
+                                </select>
+
+
+                                </div>
+
+                                <!-- FIN SELECTOR PROVEEDOR -->
+
+
+                                <!-- INICIO SELECTOR ARTICULO-->
+
+                                <div class="form-group col-md-12">
+
+                                <label for="Id_art">Artículo</label>
+
+
+                                 <select name="Id_art" id="Id_art" class="form-control">
+
+                                <?php
+
+                                 if ($listaArticulo->num_rows > 0) {
+                                foreach ($listaArticulo as $Articulo) {
+                                  echo " <option value='' hidden > Seleccione el Articulo</option> ";
+                                  echo " <option value='{$Articulo['Id_art']}'> {$Articulo['Nom_art']} {$Articulo['Precio']} </option> ";
+                                }
+                                } else {
+
+                                 echo "<h2> No tenemos resultados </h2>";
+                                }
+                                ?>
+                                 </select>
+
+
+                                 </div>
+
+                                <!-- FIN SELECTOR ARTICULO -->
+
+
+
+                                <div class="form-group col-md-12">
+                                    <label for="Cantidad">Cantidad</label>
+                                    <input type="text" class="form-control" require name="Cantidad" id="Cantidad" value="<?php echo $Cantidad ?>">
                                     <br>
+                                </div>
+
+                                
+                                <div class="form-group col-md-12">
+                                    <label for="Form_pag">Forma de pago</label>
+                                    
+                                    <select name="Form_pag" id="Form_pag" class="form-control">
+                                        <option value="#">Seleccione Forma de Pago</option>
+                                        <option value="Efectivo">Efectivo</option>
+                                        <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                                        <option value="Transferencia">Transferencia</option>
+                                    </select>
                                 </div>
 
 
@@ -70,26 +187,23 @@
                         </div>
 
                         <!-- Pie/Footer del modal -->
-                        <div class="modal-footer">
-
-                            <button value="btnAgregar" class="btn btn-success" type="submit" name="accion">Agregar</button>
-                            <button value="btnModificar" class="btn btn-warning" type="submit" name="accion">Modificar</button>
-                            <button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button>
-                            <button value="btnCancelar" class="btn btn-primary" type="submit" name="accion">Cancelar</button>
-
+                        <div class="modal-footer btn-group">
+                            <div class="btn-group col-md-12">
+                                <button value="btnAgregar" class="btn btn-success col-md-6 " type="submit" name="accion">Agregar</button>
+                                <button value="btnCancelar" class="btn btn-primary col-md-6 " type="submit" name="accion">Cancelar</button>
+                            </div>
                         </div>
+
+
 
                     </div>
                 </div>
             </div>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar Empleado
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"style="background: linear-gradient(to right,  #527502, #527502);">
+                Agregar Factura
             </button>
-
-
-
 
 
         </form>
@@ -104,14 +218,16 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Identificacion</th>
-                        <th scope="col">Nombres</th>
-                        <th scope="col">Primer Apellido</th>
-                        <th scope="col">Segundo Apellido</th>
-                        <th scope="col">Correo</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Empleado</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Proveedor</th>
+                        <th scope="col">Articulo</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Forma de pago</th>
 
-                        <th scope="col">Seleccionar</th>
+
                         <th scope="col">Eliminar</th>
                     </tr>
 
@@ -119,38 +235,41 @@
                 <tbody>
 
                     <?php
-                    /* Prefunto que si la variable listaEmpleados tiene algun contenido */
-                    if ($listaEmpleados->num_rows > 0) {
+                    /* Prefunto que si la variable listaClientes tiene algun contenido */
+                    if ($listaFactura->num_rows > 0) {
 
-                        foreach ($listaEmpleados as $empleado) {
+                        foreach ($listaFactura as $factura) {
 
                     ?>
 
                             <tr>
 
-                                <td>
-                                    <img class="img-thumbnail" width="100px" src="../Imagenes/Empleados/<?php echo $empleado['foto']; ?>" />
 
-                                </td>
-
-                                <td> <?php echo $empleado['id']        ?> </td>
-                                <td> <?php echo $empleado['nombre']    ?> </td>
-                                <td> <?php echo $empleado['apellidoP'] ?> </td>
-                                <td> <?php echo $empleado['apellidoM'] ?> </td>
-                                <td> <?php echo $empleado['correo']    ?> </td>
-
+                                <td> <?php echo $factura['Fecha']  ?> </td>
+                                <td> <?php echo $factura['Id_fac']  ?> </td>
+                                <td> <?php echo $factura['id']," ", $factura['nombre'], " ", $factura['apellidoP']  ?> </td>
+                                <td> <?php echo $factura['Id_cli']," ", $factura['Nom_cli'], " ", $factura['Ape_cli']  ?> </td>
+                                <td> <?php echo $factura['Id_prov']," ", $factura['Nom_prov'], " ", $factura['Ape_prov']   ?> </td>
+                                <td> <?php echo $factura['Id_art']," ", $factura['Nom_art'], " ", $factura['Precio']       ?> </td>
+                                <td> <?php echo $factura['Cantidad']     ?> </td>
+                                <td> <?php echo $factura['Form_pag']     ?> </td>
 
 
+                                <!-- Este Formulario se utiliza para editar los registros -->
                                 <form action="" method="post">
+                                    <input type="hidden" name="Fecha" value="<?php echo $factura['Fecha'];  ?>">
+                                    <input type="hidden" name="Id_fac" value="<?php echo $factura['Id_fac'];  ?>">
+                                    <input type="hidden" name="id" value="<?php echo $factura['id'];  ?>">
+                                    <input type="hidden" name="Id_cli" value="<?php echo $factura['Id_cli'];  ?>">
+                                    <input type="hidden" name="Id_prov" value="<?php echo $factura['Id_prov'];  ?>">
+                                    <input type="hidden" name="Id_art" value="<?php echo $factura['Id_art'];  ?>">
+                                    <input type="hidden" name="Cantidad" value="<?php echo $factura['Cantidad'];  ?>">
+                                    <input type="hidden" name="Form_pag" value="<?php echo $factura['Form_pag'];  ?>">
 
-                                    <input type="hidden" name="txtId" value="<?php echo $empleado['id'];  ?>">
-                                    <input type="hidden" name="txtNombre" value="<?php echo $empleado['nombre'];  ?>">
-                                    <input type="hidden" name="txtApellidoP" value="<?php echo $empleado['apellidoP'];  ?>">
-                                    <input type="hidden" name="txtApellidoM" value="<?php echo $empleado['apellidoM'];  ?>">
-                                    <input type="hidden" name="txtCorreo" value="<?php echo $empleado['correo'];  ?>">
-                                    <input type="hidden" name="foto" value="<?php echo $empleado['foto'];  ?>">
 
-                                    <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
+
+
+
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>
 
                                 </form>
