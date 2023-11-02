@@ -73,10 +73,10 @@ switch ($accion) {
 
 /* Consultamos todas las Facturas  */
 $consultaFactura = $conn->prepare("SELECT * FROM factura 
-INNER JOIN cliente ON factura.Id_cli = cliente.Id_cli 
+INNER JOIN cliente ON factura.IDoc_cli  = cliente.Doc_cli 
 INNER JOIN empleados ON factura.id = empleados.id 
-INNER JOIN proveedor ON factura.Id_prov = proveedor.Id_prov 
-INNER JOIN articulo ON factura.Id_art =articulo.Id_art");
+INNER JOIN proveedor ON factura.Doc_prov = proveedor.Doc_prov
+INNER JOIN articulo ON factura.Cod_arti =articulo.Cod_arti");
 $consultaFactura->execute();
 $listaFactura = $consultaFactura->get_result();
 

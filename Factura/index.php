@@ -33,11 +33,7 @@
 
 
                             
-                            <div class="form-group col-md-12">
-                                    <label for="Cantidad">Fecha</label>
-                                    <input type="date" class="form-control" require name="Fecha" id="Fecha" value="<?php echo $Fecha ?>">
-                                    <br>
-                                </div>
+                           
 
 
                                   
@@ -46,17 +42,17 @@
 
                                 <div class="form-group col-md-12">
 
-                                    <label for="Id_cli">Cliente</label>
+                                    <label for="Doc_cli ">Cliente</label>
 
 
-                                    <select name="Id_cli" id="Id_cli" class="form-control">
+                                    <select name="Doc_cli " id="Doc_cli " class="form-control">
 
                                         <?php
 
                                         if ($listaCliente->num_rows > 0) {
                                             foreach ($listaCliente as $cliente) {
                                                 echo " <option value='' hidden > Seleccione el Cliente</option> ";
-                                                echo " <option value='{$cliente['Id_cli']}'> {$cliente['Id_cli']} {$cliente['Nom_cli']} {$cliente['Ape_cli']} </option> ";
+                                                echo " <option value='{$cliente['Doc_cli ']}'> {$cliente['Tipo_doc_cli']} {$cliente['Nom_cli']} {$cliente['Nom_cli']} {$cliente['Direc_cli']} {$cliente['Tel_cli']}</option> ";
                                             }
                                         } else {
 
@@ -108,17 +104,17 @@
 
                                  <div class="form-group col-md-12">
 
-                                 <label for="Id_prov">Proveedor</label>
+                                 <label for="Doc_prov">Proveedor</label>
 
 
-                                 <select name="Id_prov" id="Id_prov" class="form-control">
+                                 <select name="Doc_prov" id="Doc_prov" class="form-control">
 
                                  <?php
 
                                  if ($listaProveedor->num_rows > 0) {
                                   foreach ($listaProveedor as $proveedor) {
                                     echo " <option value='' hidden > Seleccione el Proveedor</option> ";
-                                    echo " <option value='{$proveedor['Id_prov']}'> {$proveedor['Id_prov']} {$proveedor['Nom_prov']} {$proveedor['Ape_prov']} </option> ";
+                                    echo " <option value='{$proveedor['Doc_prov']}'> {$proveedor['Doc_prov']} {$proveedor['Nom_prov']} {$proveedor['Ape_prov']} </option> ";
                                        }
                                   } else {
 
@@ -137,17 +133,17 @@
 
                                 <div class="form-group col-md-12">
 
-                                <label for="Id_art">Artículo</label>
+                                <label for="Cod_arti ">Artículo</label>
 
 
-                                 <select name="Id_art" id="Id_art" class="form-control">
+                                 <select name="Cod_arti " id="Cod_arti " class="form-control">
 
                                 <?php
 
                                  if ($listaArticulo->num_rows > 0) {
                                 foreach ($listaArticulo as $Articulo) {
                                   echo " <option value='' hidden > Seleccione el Articulo</option> ";
-                                  echo " <option value='{$Articulo['Id_art']}'> {$Articulo['Nom_art']} {$Articulo['Precio']} </option> ";
+                                  echo " <option value='{$Articulo['Cod_arti ']}'> {$Articulo['Nom_art']} {$Articulo['Precio']}  {$Articulo['Fecha']} </option> ";
                                 }
                                 } else {
 
@@ -201,7 +197,7 @@
             </div>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"style="background: linear-gradient(to right,  #527502, #527502);">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal;">
                 Agregar Factura
             </button>
 
@@ -218,14 +214,14 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Código</th>
-                        <th scope="col">Empleado</th>
-                        <th scope="col">Cliente</th>
-                        <th scope="col">Proveedor</th>
-                        <th scope="col">Articulo</th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Documento cliente</th>
+                        <th scope="col">Docummento Empleado</th>
+                        <th scope="col">Documento proveedor</th>
+                        <th scope="col">Codigo articulo</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Forma de pago</th>
+                        <th scope="col">Fecha factura</th>
 
 
                         <th scope="col">Eliminar</th>
@@ -245,26 +241,26 @@
                             <tr>
 
 
-                                <td> <?php echo $factura['Fecha']  ?> </td>
-                                <td> <?php echo $factura['Id_fac']  ?> </td>
-                                <td> <?php echo $factura['id']," ", $factura['nombre'], " ", $factura['apellidoP']  ?> </td>
-                                <td> <?php echo $factura['Id_cli']," ", $factura['Nom_cli'], " ", $factura['Ape_cli']  ?> </td>
-                                <td> <?php echo $factura['Id_prov']," ", $factura['Nom_prov'], " ", $factura['Ape_prov']   ?> </td>
-                                <td> <?php echo $factura['Id_art']," ", $factura['Nom_art'], " ", $factura['Precio']       ?> </td>
-                                <td> <?php echo $factura['Cantidad']     ?> </td>
+                                <td> <?php echo $factura['Id_fac ']  ?> </td>
+                                <td> <?php echo $factura['Doc_cli']," ", $factura['Tipo_doc_cli'], " ", $factura['Nom_cli'], " ", $factura['Ape_cli'], " ", $factura['Direc_cli'], " ", $factura['Tel_cli']  ?> </td>
+                                <td> <?php echo $factura['id ']," ", $factura['nombre'], " ", $factura['apellidoP']  ?> </td>
+                                <td> <?php echo $factura['Doc_prov ']," ", $factura['Nom_prov'], " ", $factura['Ape_prov']   ?> </td>
+                                <td> <?php echo $factura['Cod_arti ']," ", $factura['Nom_art'], " ", $factura['Precio'], " ", $factura['Fecha']       ?> </td>
+                                <td> <?php echo $factura['Cantidad']  ?> </td>
                                 <td> <?php echo $factura['Form_pag']     ?> </td>
+                                <td> <?php echo $factura['Fecha_fac']     ?> </td>
 
 
                                 <!-- Este Formulario se utiliza para editar los registros -->
                                 <form action="" method="post">
-                                    <input type="hidden" name="Fecha" value="<?php echo $factura['Fecha'];  ?>">
                                     <input type="hidden" name="Id_fac" value="<?php echo $factura['Id_fac'];  ?>">
+                                    <input type="hidden" name="Doc_cli" value="<?php echo $factura['Doc_cli'];  ?>">
                                     <input type="hidden" name="id" value="<?php echo $factura['id'];  ?>">
-                                    <input type="hidden" name="Id_cli" value="<?php echo $factura['Id_cli'];  ?>">
-                                    <input type="hidden" name="Id_prov" value="<?php echo $factura['Id_prov'];  ?>">
-                                    <input type="hidden" name="Id_art" value="<?php echo $factura['Id_art'];  ?>">
+                                    <input type="hidden" name="Doc_prov" value="<?php echo $factura['Doc_prov'];  ?>">
+                                    <input type="hidden" name="Cod_arti" value="<?php echo $factura['Cod_arti'];  ?>">
                                     <input type="hidden" name="Cantidad" value="<?php echo $factura['Cantidad'];  ?>">
                                     <input type="hidden" name="Form_pag" value="<?php echo $factura['Form_pag'];  ?>">
+                                    <input type="hidden" name="Fecha_fac" value="<?php echo $factura['Fecha_fac'];  ?>">
 
 
 
