@@ -1,4 +1,4 @@
-<?php include 'codeCliente.php'; ?>
+<?php include 'codeproveedor.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -85,7 +85,7 @@
             </div>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Agregar Proveedor
             </button>
 
@@ -136,7 +136,7 @@
                                 <td> <?php echo $Proveedor['Tipo_doc_prov']    ?> </td>
                                 <td> <?php echo $Proveedor['Nom_prov'] ?> </td>
                                 <td> <?php echo $Proveedor['Ape_prov'] ?> </td>
-                                <td> <?php echo $Proveedor['Tel_prov ']    ?> </td>
+                                <td> <?php echo $Proveedor['Tel_prov']    ?> </td>
 
 
 
@@ -147,7 +147,7 @@
                                     <input type="hidden" name="Tipo_doc_prov" value="<?php echo $Proveedor['Tipo_doc_prov'];  ?>">
                                     <input type="hidden" name="Nom_prov" value="<?php echo $Proveedor['Nom_prov'];  ?>">
                                     <input type="hidden" name="Ape_prov" value="<?php echo $Proveedor['Ape_prov'];  ?>">
-                                    <input type="hidden" name="Tel_prov " value="<?php echo $Proveedor['Tel_prov '];  ?>">
+                                    <input type="hidden" name="Tel_prov" value="<?php echo $Proveedor['Tel_prov'];  ?>">
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>

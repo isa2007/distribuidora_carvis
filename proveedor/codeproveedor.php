@@ -76,7 +76,7 @@ switch ($accion) {
         WHERE id = '$txtId' "); */
 
         $eliminarProveedor = $conn->prepare(" DELETE FROM proveedor
-        WHERE Doc_cli= '$Doc_cli' ");
+        WHERE Doc_prov= '$Doc_prov' ");
 
         // $consultaFoto->execute();
         $eliminarProveedor->execute();
@@ -100,5 +100,5 @@ switch ($accion) {
 /* Consultamos todos los empleados  */
 $consultaProveedor = $conn->prepare("SELECT * FROM proveedor");
 $consultaProveedor->execute();
-$listaProveedor = $consultaCliente->get_result();
+$listaProveedor = $consultaProveedor->get_result();
 $conn->close();

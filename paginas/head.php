@@ -123,6 +123,21 @@
                 
             </li>
 
+            <hr class="sidebar-divider my-0">
+            <div class="sidebar-heading">
+                proveedor
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../proveedor/index.php"  aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>proveedor</span>
+                </a>
+               
+            </li>
+            <!-- Linea de separacion  -->
+
 
 
             <!-- Linea de separacion  -->
