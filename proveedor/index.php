@@ -31,13 +31,13 @@
                                 
 
                                 <div class="form-group col-md-12">
-                                    <label for=" ">Documento</label>
+                                    <label for="Doc_prov">Documento</label>
                                     <input type="text" class="form-control" require name="Doc_prov" id="Doc_prov" placeholder="" value="<?php echo $Doc_prov ?>">
                                     <br>
                                 </div>  
 
                                 <div class="form-group col-md-12">
-                                    <label for="Tipo_dDoc_provoc_prov">Tipo de documento</label>
+                                    <label for="Tipo_doc_prov">Tipo de documento</label>
                                     <input type="text" class="form-control" require name="Tipo_doc_prov" id="Tipo_doc_prov" placeholder="" value="<?php echo $Tipo_doc_prov ?>">
                                     <br>
                                 </div>  
@@ -58,9 +58,9 @@
                                
 
                                 <div class="form-group col-md-12">
-                                    <label for="Tel_prov ">Telefono</label>
-                                    <input type="text" class="form-control" require name="Tel_prov " id="Tel_prov " placeholder="" value="<?php echo $Tel_prov  ?>">
-                                    <br>
+                                    <label for="Tel_prov">Telefono</label>
+                                    <input type="text" class="form-control" require name="Tel_prov" id="Tel_prov" placeholder="" value="<?php echo $Tel_prov  ?>">
+                                    
                                 </div>  
 
                                 

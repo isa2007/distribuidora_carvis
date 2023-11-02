@@ -42,17 +42,17 @@
 
                                 <div class="form-group col-md-12">
 
-                                    <label for="Doc_cli ">Cliente</label>
+                                    <label for="Doc_cli">Cliente</label>
 
 
-                                    <select name="Doc_cli " id="Doc_cli " class="form-control">
+                                    <select name="Doc_cli" id="Doc_cli" class="form-control">
 
                                         <?php
 
                                         if ($listaCliente->num_rows > 0) {
-                                            foreach ($listaCliente as $cliente) {
+                                            foreach ($listaCliente as $Cliente) {
                                                 echo " <option value='' hidden > Seleccione el Cliente</option> ";
-                                                echo " <option value='{$cliente['Doc_cli ']}'> {$cliente['Tipo_doc_cli']} {$cliente['Nom_cli']} {$cliente['Nom_cli']} {$cliente['Direc_cli']} {$cliente['Tel_cli']}</option> ";
+                                                echo " <option value='{$Cliente['Doc_cli']}'> {$Cliente['Tipo_doc_cli']} {$Cliente['Nom_cli']} {$Cliente['Nom_cli']} {$Cliente['Direc_cli']} {$Cliente['Tel_cli']} </option> ";
                                             }
                                         } else {
 
@@ -133,17 +133,17 @@
 
                                 <div class="form-group col-md-12">
 
-                                <label for="Cod_arti ">Artículo</label>
+                                <label for="Cod_arti">Artículo</label>
 
 
-                                 <select name="Cod_arti " id="Cod_arti " class="form-control">
+                                 <select name="Cod_arti" id="Cod_arti" class="form-control">
 
                                 <?php
 
-                                 if ($listaArticulo->num_rows > 0) {
+                                 if ($listaArticulo-> num_rows > 0) {
                                 foreach ($listaArticulo as $Articulo) {
                                   echo " <option value='' hidden > Seleccione el Articulo</option> ";
-                                  echo " <option value='{$Articulo['Cod_arti ']}'> {$Articulo['Nom_art']} {$Articulo['Precio']}  {$Articulo['Fecha']} </option> ";
+                                  echo " <option value='{$Articulo['Cod_arti']}'> {$Articulo['Nom_art']} {$Articulo['Precio']}  {$Articulo['Fecha']} </option> ";
                                 }
                                 } else {
 
@@ -177,6 +177,12 @@
                                     </select>
                                 </div>
 
+                                <div class="form-group col-md-12">
+                                    <label for="Fecha_fac">Fecha</label>
+                                    <input type="date" class="form-control" require name="Fecha_fac" id="Fecha_fac" value="<?php echo $Fecha_fac ?>">
+                                    <br>
+                                </div>
+
 
 
                             </div>
@@ -197,7 +203,7 @@
             </div>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal;">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Agregar Factura
             </button>
 
@@ -241,11 +247,11 @@
                             <tr>
 
 
-                                <td> <?php echo $factura['Id_fac ']  ?> </td>
-                                <td> <?php echo $factura['Doc_cli']," ", $factura['Tipo_doc_cli'], " ", $factura['Nom_cli'], " ", $factura['Ape_cli'], " ", $factura['Direc_cli'], " ", $factura['Tel_cli']  ?> </td>
-                                <td> <?php echo $factura['id ']," ", $factura['nombre'], " ", $factura['apellidoP']  ?> </td>
-                                <td> <?php echo $factura['Doc_prov ']," ", $factura['Nom_prov'], " ", $factura['Ape_prov']   ?> </td>
-                                <td> <?php echo $factura['Cod_arti ']," ", $factura['Nom_art'], " ", $factura['Precio'], " ", $factura['Fecha']       ?> </td>
+                                <td> <?php echo $factura['Id_fac']  ?> </td>
+                                <td> <?php echo $factura['Doc_cli']," ", $factura['Tipo_doc_cli']," ", $factura['Nom_cli']," ", $factura['Ape_cli']," ", $factura['Direc_cli']," ", $factura['Tel_cli']  ?> </td>
+                                <td> <?php echo $factura['id']," ", $factura['nombre']," ", $factura['apellidoP']  ?> </td>
+                                <td> <?php echo $factura['Doc_prov']," ", $factura['Nom_prov']," ", $factura['Ape_prov']   ?> </td>
+                                <td> <?php echo $factura['Cod_arti']," ", $factura['Nom_art']," ", $factura['Precio']," ", $factura['Fecha']       ?> </td>
                                 <td> <?php echo $factura['Cantidad']  ?> </td>
                                 <td> <?php echo $factura['Form_pag']     ?> </td>
                                 <td> <?php echo $factura['Fecha_fac']     ?> </td>
