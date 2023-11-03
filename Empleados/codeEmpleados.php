@@ -120,11 +120,11 @@ switch ($accion) {
         $consultaFoto = $conn->prepare(" SELECT foto FROM empleados
         WHERE id = '$txtId' "); */
 
-        $eliminarEmpleado = $conn->prepare(" DELETE FROM empleados
+        $eliminarEmpleados = $conn->prepare(" DELETE FROM empleados
         WHERE id = '$txtId' ");
 
         // $consultaFoto->execute();
-        $eliminarEmpleado->execute();
+        $eliminarEmpleados->execute();
         $conn->close();
 
         header('location: index.php');

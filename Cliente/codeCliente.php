@@ -56,7 +56,7 @@ switch ($accion) {
 
         $editarCliente = $conn->prepare(" UPDATE cliente SET Doc_cli = '$Doc_cli', 
         Tipo_doc_cli = '$Tipo_doc_cli', Nom_cli = '$Nom_cli', Ape_cli = '$Ape_cli',
-        Direc_cli = '$Direc_cli' , Tel_cli = '$Tel_cli' 
+        Direc_cli = '$Direc_cli', Tel_cli = '$Tel_cli' 
         WHERE Doc_cli = '$Doc_cli' ");
 
 
@@ -76,7 +76,7 @@ switch ($accion) {
         WHERE id = '$txtId' "); */
 
         $eliminarCliente = $conn->prepare(" DELETE FROM cliente
-        WHERE Doc_cli= '$Doc_cli' ");
+        WHERE Doc_cli = '$Doc_cli' ");
 
         // $consultaFoto->execute();
         $eliminarCliente->execute();
